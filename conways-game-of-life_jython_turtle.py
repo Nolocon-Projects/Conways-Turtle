@@ -1,6 +1,6 @@
 # Conways Game of Life - Jython Turtle Version
 # © 2026 XeraoXX & Github Contributors | Licensed under GNU GPL v3
-
+# https://github.com/Nolocon-Projects/Conways-Turtle
 # This project requires Jython. Get it on https://www.jython.org/download.html
 from gturtle import *
 import time
@@ -113,4 +113,5 @@ class logicManager():
             time.sleep(waitingDuration)
         
 if __name__ == "__main__":
+
     logicManager().run()
