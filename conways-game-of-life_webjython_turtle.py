@@ -1,6 +1,6 @@
 # Conways Game of Life - WebJython Turtle Version
 # © 2026 XeraoXX & Github Contributors | Licensed under GNU GPL v3
-
+# https://github.com/Nolocon-Projects/Conways-Turtle
 # This project requires WebTigerJython. Open it on https://webtigerjython.ethz.ch/
 from gturtle import *
 import time
@@ -112,4 +112,5 @@ class logicManager():
             time.sleep(waitingDuration)
         
 if __name__ == "__main__":
+
     logicManager().run()
