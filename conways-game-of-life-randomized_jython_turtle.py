@@ -8,7 +8,6 @@ import random
 
 boxSize = inputInt("Box Size: ")
 waitingDuration = inputFloat("Time between generations (in s): ")
-density = max(0.0, min(1.0, inputFloat("Cell density (0.0 - 1.0, e.g. 0.3 for 30%): ")))
 
 class visualManager():
     def drawField(self, field):
@@ -30,16 +29,13 @@ class logicManager():
     def __init__(self):
         setPlaygroundSize(1024, 768)
         makeTurtle()
-        # Compute grid dimensions from playground size and box size
-        gridWidth = 1024 // boxSize
-        gridHeight = 768 // boxSize
-        # Randomly populate cells across the entire visible grid
-        self.activatedFields = set()
-        for gx in range(-(gridWidth // 2), gridWidth // 2 + 1):
-            for gy in range(-(gridHeight // 2), gridHeight // 2 + 1):
-                if random.random() < density:
-                    self.activatedFields.add((gx, gy))
-        setTitle("Conways Game Of Life - Randomized")
+        self.activatedFields = set(
+            (x, y)
+            for x in range(-(512 // boxSize), 512 // boxSize + 1)
+            for y in range(-(384 // boxSize), 384 // boxSize + 1)
+            if random.random() < 0.3
+        )
+        setTitle("Conways Game Of Life")
         setPenColor("black")
         setFillColor("black") 
         hideTurtle()
